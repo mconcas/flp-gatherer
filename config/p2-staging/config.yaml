@@ -344,13 +344,13 @@ node_groups:
     - infologger
     - consul
     - telegraf
-  
+
   qc:
     # - infologger
     - consul
     - telegraf
     - ccdb-memory
-  
+
   qcpp:
     - consul
     - telegraf

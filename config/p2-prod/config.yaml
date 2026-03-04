@@ -7,14 +7,14 @@ applications:
   # alice-ecs
   alice-ecs:
     log_paths:
-      - /var/log/o2-aliecs-core*
+      - /data/logs/o2-aliecs-core*
     journal: false # Use file-based logs only
     journal_mode: binary # Optional: not used when journal: false
 
   # Apricot
   apricot:
     log_paths:
-      - /var/log/o2-apricot*
+      - /data/logs/o2-apricot*
     journal: false # Use file-based logs only
     journal_mode: binary # Optional: not used when journal: false
 
@@ -113,14 +113,14 @@ applications:
       - /var/log/o2-infologger-daemon.log*
     journal: false # Use file-based logs only
     journal_mode: binary # Optional: not used when journal: false
-  
+
   # Kafka
   kafka-ui:
     log_paths:
       - /var/log/kafka-ui*
     journal: false # Use file-based logs only
     journal_mode: binary # Optional: not used when journal: false
-  
+
   kafka:
     log_paths:
       - /var/log/kafka
@@ -297,6 +297,7 @@ node_groups:
 
   head:
     - apricot
+    - alice-ecs
     - consul
     - nomad
     - o2-flp-setup
@@ -382,6 +383,7 @@ node_groups:
   qcg:
     - consul
     - telegraf
+    - qcg
 
   qcg-mc:
     - consul
@@ -473,7 +475,7 @@ raw_mode:
     - /var/log/journal
     - /data/logs
     - /data/pgsql
-  
+
   # Include journal paths from journal_options in raw mode checks
   include_journal_paths: true
 
