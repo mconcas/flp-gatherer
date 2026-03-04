@@ -14,7 +14,7 @@ applications:
   # Apricot
   apricot:
     log_paths:
-      - /data/logs/o2-apricot*
+      - /var/log/o2-apricot*
     journal: false # Use file-based logs only
     journal_mode: binary # Optional: not used when journal: false
 
